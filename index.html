@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vote elgibility checker</title>
+    <style>
+        body{
+            
+            text-align: center;
+            padding: 100px;
+ }
+ .a {
+            height: 200px;
+            cursor: pointer;
+            text-align: center;
+            padding: 30px;
+            width: 350px;
+            margin: 20px auto;
+            border-radius: 20px;
+            
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color:black;
+            background-color: pink;
+        }
+        .b{
+            background-color: pink;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="a">
+    <h2>Vote elgibility checker </h2>
+    <input type="number" id="age" placeholder="Enter your age"><br><br>
+    <button onclick="checkvote()" class="b">check</button>
+    <h3 id="result"class="c"></h3>
+    </div>
+    <script>
+        function checkvote(){
+            let age=document.getElementById("age").value;
+             age = Number(age);
+            
+            if (age===0){
+                document.getElementById("result").innerHTML = "Please enter a valid age";
+            }
+            else if(age >= 18){
+                document.getElementById("result").innerHTML = "You are eligible to vote:";
+            }
+            else{
+                document.getElementById("result").innerHTML = "You are not eligible to vote. You must be at least 18 years old.";
+            }
+        }
+    </script>
+    
+</body>
+</html>
